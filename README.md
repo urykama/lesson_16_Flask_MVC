@@ -17,12 +17,15 @@
 8. В readme на гитхабе добавить описание работы сайта, если еще нет
 9. Так же можно добавить любой дополнительный функционал по желанию
 
-    Источники знаний: 
+    Источники знаний:
+10. 
 Лекции УНИВЕРСИТЕТ ИСКУССТВЕННОГО ИНТЕЛЛЕКТА TERRA AI: 
     https://neural-university.ru/
+
 Мега-Учебник Flask, Часть 1: «Привет, Мир!»
     2013 год:   https://habr.com/ru/post/193242/    (устаревшее, многое из старого уже не работает)
     2018 год:   https://habr.com/ru/post/346342/
+
 This is an example application featured in my [Flask Mega-Tutorial]
 (https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world).
 See the tutorial for instructions on how to work with it.
