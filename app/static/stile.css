@@ -1,0 +1,51 @@
+body {
+    min-width: 320px;
+    font-size: 14px;
+    font-family: 'Playfair Display', serif;
+    color: #626262;
+    background: #121212;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: #b4ad9e;
+}
+
+a:hover{
+color: #898377;
+}
+
+header .navbar-brand{
+    font-family: 'Inconsolata', monospace;
+    font-size: 30px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+header .nav-item{
+    text-transform: uppercase;
+    margin-left: 50px;
+}
+
+
+header .nav-item a::after{
+    content: '';
+    display: block;
+    width: 100%;
+    background-color: #ccc;
+    height: 1px;
+    transform: scale(0);
+    transition: all .6s;
+}
+
+header .nav-item a:hover::after{
+    transform: scale(1);
+}
+
+.slider{
+    margin-bottom: 30px;
+}

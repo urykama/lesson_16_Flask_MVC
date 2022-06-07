@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Таблица результатов</h1>
+
+    {% if posts %}
+    <p>Вывод данных</p>
+    {% else %}
+    <p>Нет данных</p>
+    {% endif %}
+
+
+<table cellpadding="3">
+    {% for post in posts %}
+    <tr>
+        <td align="right">{{post[1]}}</td>
+        <td align="left"><b>{{post[0]}}</b></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
