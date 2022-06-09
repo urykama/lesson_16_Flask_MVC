@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Контактная информация</h1>
-<h2>Developer: {{user.nickname}}</h2>
-<table cellpadding="7">
-    {% for post in posts %}
-    <tr>
-        <td width="111px" align="right">{{post.author.username}}</td>
-        <td align="left"><b>{{post.body}}</b></td>
-    </tr>
-    {% endfor %}
-</table>
+<div class="container text">
+    <h1>Контактная информация</h1>
+    <h2>Developer: {{user.nickname}}</h2>
+    <table cellpadding="7">
+        {% for post in posts %}
+        <tr>
+            <td width="111px" align="right">{{post.author.username}}</td>
+            <td align="left"><b>{{post.body}}</b></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
 {% endblock %}

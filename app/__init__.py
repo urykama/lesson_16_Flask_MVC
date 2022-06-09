@@ -2,6 +2,7 @@ from flask import Flask
 from config import Config
 # from head_hanter.forms_hh import HeadHunterForm
 from head_hanter.statistics import Statistics
+
 # from flask_sqlalchemy import SQLAlchemy
 # from flask_migrate import Migrate
 
@@ -12,6 +13,7 @@ app = Flask(__name__)
 app.config.from_object(Config)
 # form = HeadHunterForm()
 stat = Statistics()
+
 
 # db = SQLAlchemy(app)
 # migrate = Migrate(app, db)

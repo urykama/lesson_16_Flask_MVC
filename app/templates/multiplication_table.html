@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Таблица умножения</h1>
-<table cellpadding="6" cols="10">
-    {% for i in range(10) %}
-    <tr>
-        {% for j in range(10) %}
-        <td width="30px" align="right">{{i * j}}</td>
+<div class="container text" align="center">
+    <h1>Таблица умножения</h1>
+    <table cellpadding="6" cols="10">
+        {% for i in range(10) %}
+        <tr>
+            {% for j in range(10) %}
+            <td width="30px" align="right">{{i * j}}</td>
+            {% endfor %}
+        </tr>
         {% endfor %}
-    </tr>
-    {% endfor %}
-</table>
+    </table>
+</div>
 {% endblock %}
