@@ -25,10 +25,15 @@ class Statistics:
                 print("Соединение с SQLite закрыто")
 
     def find(self, requirement):
+        '''
+        заполнение (self.stat) переменной в этом классе
+        и таблицы SQLite
+        :param requirement:
+        :return:
+        '''
         try:
             conn = sqlite3.connect('hh.db')
             cursor = conn.cursor()
-            # print("База данных подключена к SQLite")
             for item in requirement:
                 cursor.execute(f"INSERT INTO HH VALUES (NULL, '{item['name']}');")
                 if item['name'] in self.stat:
@@ -46,6 +51,10 @@ class Statistics:
         return 0
 
     def get_stat(self):
+        '''
+        выдает результаты поиска из (self.stat) переменной в этом классе
+        :return:
+        '''
         sorted_list = sorted(self.stat.items(), key=lambda x: x[1], reverse=True)
         short_list = []
         for i in range(len(sorted_list)):
@@ -55,3 +64,34 @@ class Statistics:
                 break
         sorted_tuple = tuple(short_list)
         return sorted_tuple
+
+    def get_stat_SQLite(self):
+        '''
+        выдает результаты поиска из таблицы SQLite
+        :return:
+        '''
+        try:
+            conn = sqlite3.connect('hh.db')
+            cursor = conn.cursor()
+            print("База данных подключена к SQLite")
+            cursor.execute('''SELECT *
+             FROM (
+                      SELECT requirement AS [First Name],
+                             count( * ) AS [Number of books borrowed]
+                        FROM HH
+                       GROUP BY requirement
+                       ORDER BY "Number of books borrowed" DESC
+                  )
+            WHERE "Number of books borrowed" > 1;''')
+            # conn.commit()
+            print("Таблица SQLite создана")
+
+            posts = cursor.fetchall()
+            cursor.close()
+        except sqlite3.Error as error:
+            print("Ошибка при подключении к sqlite", error)
+        finally:
+            if (conn):
+                conn.close()
+                print("Соединение с SQLite закрыто")
+        return posts

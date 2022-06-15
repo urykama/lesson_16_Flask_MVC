@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container text">
-    <h1>Таблица результатов через SQLAlchemy</h1>
+    <h1>Таблица результатов</h1>
 
     {% if posts %}
     <p>Вывод данных</p>
@@ -13,8 +13,8 @@
     <table cellpadding="3">
         {% for post in posts %}
         <tr>
-            <td align="right"><b>{{post.cnt}}</b></td>
-            <td align="left">{{post.requirement}}</td>
+            <td align="right">{{post[1]}}</td>
+            <td align="left"><b>{{post[0]}}</b></td>
         </tr>
         {% endfor %}
     </table>

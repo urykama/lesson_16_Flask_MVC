@@ -5,7 +5,7 @@ from wtforms.validators import DataRequired
 
 class HeadHunterForm(FlaskForm):
     search_bar = StringField('Введите строку поиска', validators=[DataRequired()])
-    password = StringField('Введите название города', validators=[DataRequired()])
+    city = StringField('Введите название города', validators=[DataRequired()])
     remember_me = BooleanField('Запомнить меня')
     submit = SubmitField('Войти')
 '''

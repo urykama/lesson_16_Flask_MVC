@@ -1,6 +1,9 @@
 import requests
 import time
 
+import head_hanter.stat_orm2
+
+
 def parser(stat, region_id=99, search_bar='python Developer'):
     url_vacancies = 'https://api.hh.ru/vacancies'
     num = 0
@@ -21,7 +24,8 @@ def parser(stat, region_id=99, search_bar='python Developer'):
 
         for item in items:  # список словарей   -> текущий словарь
             result = requests.get(item['url']).json()
-            num += stat.find(result['key_skills'])  # сбор статистики
+            head_hanter.stat_orm2.find(result['key_skills'])
+            # num += stat.find(result['key_skills'])  # сбор статистики
         print(f'Поиск по стрнице {start_page}, обнаружено {num} совпадений')
         start_page += 1
         # time.sleep(1)  # Задержка
